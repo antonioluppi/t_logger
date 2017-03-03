@@ -2,6 +2,7 @@
 import serial
 import csv
 import sys
+import time
 #excel stuff
 #from time import gmtime, strftime
 #resultFile=open('MyData.csv','wb')
@@ -32,7 +33,7 @@ if __name__=='__main__':
 	f = open('output.csv', 'w+')	
     while True:
         # Read a line and convert it from b'xxx\r\n' to xxx
-        line = ser.readline().decode('utf-8')]
+        line = str(time.time()) + "," + ser.readline().decode('utf-8')]
         if line:  # If it isn't a blank line
             f.write(line)
     f.close()
